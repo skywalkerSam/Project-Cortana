@@ -1,6 +1,6 @@
 # Project-CORTANA
 
-This is a project about developing a personal assistant program. As the project name suggests, you know where it's coming from, "Halo Infinite" :)
+Trying to develop something like Cortana. Inspired from Halo Infinite.
 
 - Deep System Integration
 - Cross-Platform
