@@ -1,6 +1,6 @@
 """
 Author: @skywalkerSam
-Aim: Cortana Improvement v1
+Aim: Development of something like Cortana!
 Date: 12022.12.21.11:01:00
 """
 # TODO
@@ -21,18 +21,18 @@ Date: 12022.12.21.11:01:00
 # Improve the UI
 # Make it cross-platform
 # Prepare a "Documentation"
-# ChatGPT Implementation for general conversations
-# Use metahumans for interaction
+# ChatGpt Implementation for general conversations
+# Use Metahumans for interaction
 
-import pyttsx3 as pt
+import pyttsx3 as ptx
 import speech_recognition as sr
 import datetime as dt
 import os
 import webbrowser as wb
 import subprocess as sp
-import cortana_system as cs
-import system_data as sd
-import user_data as ud
+import windows.title as title
+import windows.file_paths as fp
+import windows.user_configs as uc
 
 
 
@@ -62,7 +62,7 @@ def process_command():
 
 
 def speak(words="Hello World"):
-    engine = pt.init()
+    engine = ptx.init()
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[1].id)
     engine.getProperty('rate')
@@ -86,7 +86,7 @@ def greeting(user="User"):
 attempt = 1
 if __name__ == '__main__':
     try:
-        print(cs.cortana_logo)
+        print(title.cortana_logo)
         greeting('Starboy')  # Change the name of the user here
         speak("I'm here...")
 
@@ -122,20 +122,20 @@ if __name__ == '__main__':
 
             elif "who are you" in command:
                 print(
-                    f"Hello, I'm {ud.ai_name} & I'm here to help you... \n")
+                    f"Hello, I'm {uc.ai_name} & I'm here to help you... \n")
                 speak(
-                    f"Hello, I am {ud.ai_name}, and I am here to help you")
+                    f"Hello, I am {uc.ai_name}, and I am here to help you")
 
             elif "tell me about yourself" in command:
                 print(
-                    f"Hey, I'm {cs.default_ai} & I'm here to help... \n")
+                    f"Hey, I'm {title.default_ai} & I'm here to help... \n")
                 speak(
-                    f"Hey, I am {cs.default_ai}, and I am here to help")
+                    f"Hey, I am {title.default_ai}, and I am here to help")
 
             elif "hello cortana" in command:
                 print(
-                    f"Hello {ud.name}. How may I help you? \n")
-                speak(f"Hello {ud.name}. How may I help you?")
+                    f"Hello {uc.full_name}. How may I help you? \n")
+                speak(f"Hello {uc.full_name}. How may I help you?")
 
             elif "you need to improve" in command:
                 print("Sorry for the inconvenience :( \n")
@@ -143,23 +143,23 @@ if __name__ == '__main__':
                 break
 
             elif "good morning" in command:
-                print(f"Good morning {ud.name}, have a nice day :) \n")
-                speak(f"Good morning {ud.name}, have a nice day")
+                print(f"Good morning {uc.full_name}, have a nice day :) \n")
+                speak(f"Good morning {uc.full_name}, have a nice day")
 
             elif "good afternoon" in command:
                 print(
-                    f"Good afternoon {ud.name}, hope you doing good :) \n")
-                speak(f"Good afternoon {ud.name}, hope you doing good")
+                    f"Good afternoon {uc.full_name}, hope you doing good :) \n")
+                speak(f"Good afternoon {uc.full_name}, hope you doing good")
 
             elif "good evening" in command:
                 print(
-                    f"Good evening {ud.name}, It's time to get refreshed :) \n")
+                    f"Good evening {uc.full_name}, It's time to get refreshed :) \n")
                 speak(
-                    f"Good evening {ud.name}, It's time to get refreshed")
+                    f"Good evening {uc.full_name}, It's time to get refreshed")
 
             elif "good night" in command:
-                print(f"Good Night {ud.name}, Have a nice dream :) \n")
-                speak(f"Good Night {ud.name}, Have a nice dream")
+                print(f"Good Night {uc.full_name}, Have a nice dream :) \n")
+                speak(f"Good Night {uc.full_name}, Have a nice dream")
                 break
 
             # Windows System Commands...
@@ -334,116 +334,116 @@ if __name__ == '__main__':
                 break
 
             elif "open docker desktop" in command:
-                os.startfile(sd.docker_desktop_path)
+                os.startfile(fp.docker_desktop_path)
                 print("Opening Docker Desktop...")
                 speak("Opening Docker Desktop...")
                 break
 
             elif "open virtualbox" in command:
-                os.startfile(sd.virtualbox_path)
+                os.startfile(fp.virtualbox_path)
                 print("Opening Virtualbox...")
                 speak("Opening Virtualbox...")
                 break
 
             elif 'open firefox' in command:
-                os.startfile(sd.firefox_path)
+                os.startfile(fp.firefox_path)
                 print('Opening Firefox Browser...')
                 speak('Opening Firefox...')
                 break
 
             elif "open chrome" in command:
                 
-                os.startfile(sd.chrome_path)
+                os.startfile(fp.chrome_path)
                 print("Opening Chrome Browser...")
                 speak("Opening Chrome...")
                 break
 
             elif "open microsoft browser" in command:
-                os.startfile(sd.microsoft_browser_path)
+                os.startfile(fp.microsoft_browser_path)
                 print('Opening Microsoft Edge Browser...')
                 speak("Opening Microsoft Edge...")
                 break
 
             elif "open microsoft edge browser" in command:
-                os.startfile(sd.microsoft_browser_path)
+                os.startfile(fp.microsoft_browser_path)
                 print('Opening Microsoft Edge Browser...')
                 speak("Opening Microsoft Edge...")
                 break
 
             elif "open microsoft edge" in command:
-                os.startfile(sd.microsoft_browser_path)
+                os.startfile(fp.microsoft_browser_path)
                 print('Opening Microsoft Edge Browser...')
                 speak("Opening Microsoft Edge...")
                 break
 
             elif "open windows browser" in command:
-                os.startfile(sd.microsoft_browser_path)
+                os.startfile(fp.microsoft_browser_path)
                 print('Opening Microsoft Edge Browser...')
                 speak("Opening Microsoft Edge...")
                 break
 
             elif "open epic games launcher" in command:
-                os.startfile(sd.epic_games_launcher)
+                os.startfile(fp.epic_games_launcher)
                 print("Opening Epic Games Launcher...")
                 speak("Opening Epic Games Launcher...")
                 break
 
             elif "open fortnite" in command:
-                os.startfile(sd.epic_games_launcher)
+                os.startfile(fp.epic_games_launcher)
                 print("Opening Epic Games Launcher...")
                 speak("Opening Epic Games Launcher...")
                 break
 
             elif "open fortnite game" in command:
-                os.startfile(sd.epic_games_launcher)
+                os.startfile(fp.epic_games_launcher)
                 print("Opening Epic Games Launcher...")
                 speak("Opening Epic Games Launcher...")
                 break
 
             elif "i wanna play fortnite" in command:
-                os.startfile(sd.epic_games_launcher)
+                os.startfile(fp.epic_games_launcher)
                 print("Opening Epic Games Launcher...")
                 speak("Opening Epic Games Launcher...")
                 break
 
             elif "i want to play fortnite" in command:
-                os.startfile(sd.epic_games_launcher)
+                os.startfile(fp.epic_games_launcher)
                 print("Opening Epic Games Launcher...")
                 speak("Opening Epic Games Launcher...")
                 break
 
             elif "i want to play fortnite game" in command:
-                os.startfile(sd.epic_games_launcher)
+                os.startfile(fp.epic_games_launcher)
                 print("Opening Epic Games Launcher...")
                 speak("Opening Epic Games Launcher...")
                 break
 
             elif "open unreal engine" in command:
-                os.startfile(sd.epic_games_launcher)
+                os.startfile(fp.epic_games_launcher)
                 print("Opening Epic Games Launcher...")
                 speak("Opening Epic Games Launcher...")
                 break
 
             elif "open steam play" in command:
-                os.startfile(sd.steam_play)
+                os.startfile(fp.steam_play)
                 print("Opening Steam Play...")
                 speak("Opening Steam Play...")
                 break
 
             elif "open steam" in command:
-                os.startfile(sd.steam_play)
+                os.startfile(fp.steam_play)
                 print("Opening Steam Play...")
                 speak("Opening Steam Play...")
                 break
 
             elif "i wanna play halo infinite" in command:
-                os.startfile(sd.steam_play)
+                os.startfile(fp.steam_play)
                 print("Opening Steam Play...")
                 speak("Opening Steam Play...")
                 break
 
             elif "i want to play halo infinite" in command:
-                os.startfile(sd.steam_play)
+                os.startfile(fp.steam_play)
                 print("Opening Steam Play...")
                 speak("Opening Steam Play...")
                 break
@@ -487,8 +487,8 @@ if __name__ == '__main__':
 
             elif 'open udemy' in command:
                 wb.open('https://www.udemy.com/')
-                print('Opening Udemy.com...')
-                speak('Opening Udemy...')
+                print('Opening udemy.com...')
+                speak('Opening udemy...')
                 break
 
             elif "open code browser" in command:
@@ -551,7 +551,7 @@ if __name__ == '__main__':
                 speak("Opening Twitter.com...")
                 break
 
-            elif "open instagaram" in command:
+            elif "open instagram" in command:
                 wb.open("https://www.instagram.com/")
                 print("Opening Instagram.com...")
                 speak("Opening Instagram.com...")

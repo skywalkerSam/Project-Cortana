@@ -2,5 +2,5 @@ comtypes==1.1.11
 PyAudio ==0.2.11
 pypiwin32==223
 pyttsx3==2.90
-pywin32==304
 SpeechRecognition==3.8.1
+pywin32==304
