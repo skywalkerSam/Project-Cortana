@@ -1,4 +1,4 @@
-default_ai = "Cortana"
+default_ai = 'Cortana'
 
 cortana_logo = ("""
  _____               _                        

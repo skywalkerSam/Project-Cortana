@@ -4,6 +4,6 @@ clear
 
 cd .
 
-python3 cortana_v-0.1.py
+python3 main.py
 
 exit
