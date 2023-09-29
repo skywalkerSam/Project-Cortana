@@ -30,9 +30,9 @@ import datetime as dt
 import os
 import webbrowser as wb
 import subprocess as sp
-import windows.title as title
-import windows.file_paths as fp
-import windows.user_configs as uc
+import src.title as title
+import src.file_paths as fp
+import src.user_configs as uc
 
 
 
@@ -46,10 +46,10 @@ def process_command():
                 audio = r.listen(source)
             print("Recognizing Now...\n")
             command = r.recognize_google(audio, language="en-US")
-            print("You Said: " + command + "\n\n")
+            print("You Said: " + command + "\n")
             break
         except KeyboardInterrupt:
-            print("\n\nCancelling Tasks...\n")
+            print("\n\nCancelling Tasks...")
             break
         except sr.UnknownValueError:
             print("Sorry, Please say that again...\n")
@@ -66,7 +66,7 @@ def speak(words="Hello World"):
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[1].id)
     engine.getProperty('rate')
-    engine.setProperty('rate', 210)
+    engine.setProperty('rate', 200)
     engine.say(words)
     engine.runAndWait()
 
@@ -87,7 +87,7 @@ attempt = 1
 if __name__ == '__main__':
     try:
         print(title.cortana_logo)
-        greeting('Starboy')  # Change the name of the user here
+        greeting(uc.full_name)  
         speak("I'm here...")
 
         while attempt <= 5:
@@ -140,6 +140,21 @@ if __name__ == '__main__':
             elif "you need to improve" in command:
                 print("Sorry for the inconvenience :( \n")
                 speak("Sure")
+                break
+
+            elif "have a good day" in command:
+                print("Thanks, a good day to you too :) \n")
+                speak("Thanks, a good day to you too")
+                break
+
+            elif "have a good one" in command:
+                print("Thanks, you too :) \n")
+                speak("Thanks, you too")
+                break
+
+            elif "have a nice day" in command:
+                print("Thanks, Bye... :) \n")
+                speak("Thanks, Bye...")
                 break
 
             elif "good morning" in command:
@@ -485,6 +500,36 @@ if __name__ == '__main__':
                 speak("Opening Youtube...")
                 break
 
+            elif 'open netflix' in command:
+                wb.open('https://www.netflix.com/')
+                print("Opening Netflix...")
+                speak("Opening Netflix...")
+                break
+
+            elif 'open amazon prime video' in command:
+                wb.open('https://www.primevideo.com/')
+                print("Opening Amazon Prime Video...")
+                speak("Opening Amazon Prime Video...")
+                break
+
+            elif 'open prime video' in command:
+                wb.open('https://www.primevideo.com/')
+                print("Opening Amazon Prime Video...")
+                speak("Opening Amazon Prime Video...")
+                break
+
+            elif 'open hotstar' in command:
+                wb.open('https://www.hotstar.com/')
+                print("Opening Hotstar...")
+                speak("Opening Hotstar...")
+                break
+
+            elif 'open disney plus' in command:
+                wb.open('https://www.disneyplus.com/')
+                print("Opening Disney + Hotstar...")
+                speak("Opening Disney plus Hotstar...")
+                break
+
             elif 'open udemy' in command:
                 wb.open('https://www.udemy.com/')
                 print('Opening udemy.com...')
@@ -634,7 +679,7 @@ if __name__ == '__main__':
                 speak("Say that again")
 
     except KeyboardInterrupt:
-        print("\n\nCancelling Tasks...\n")
+        print("\n    Exiting Interface...!\n")
 
     except UnboundLocalError:
-        print("\n\nCancelling Tasks...\n")
+        print("\n    Exiting Interface...!\n")
