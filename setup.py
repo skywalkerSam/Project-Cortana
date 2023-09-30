@@ -7,6 +7,6 @@ setup(
     url="https://github.com/skywalkerSam/Project-Cortana",
     license='MIT',
     author='Starboy',
-    author_email='contact.samskywalker@gmail.com',
-    description='This is the initial phase of Project-Cortana...'
+    author_email='starboy@skywalkersam.dev',
+    description='This is Project-Cortana.'
 )
