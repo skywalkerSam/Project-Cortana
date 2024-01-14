@@ -1,7 +1,7 @@
 """
 Author: @skywalkerSam
-Aim: First release of CortanaAI 
-Date: 12022.07.19.03:21:00
+Aim: Cortana Themed OS Assistant
+Date: 12024.01.14.1312
 """
 
 import pyttsx3 as pt

@@ -2,10 +2,10 @@
 
 Trying to develop something like Cortana. Inspired from Halo Infinite.
 
-    - Deep System Integration
     - Cross-Platform
-    - Multiple Voice Options
-    - Natural Language Processing
+    - LLMs
+    - Deep System Integration
+    - Human Voice
     - Metahuman based interactions
-    - An astonishing UI
-    - A PoC model till late 2024
+    - Halo inspired UI
+    - A PoC model till late 2025
