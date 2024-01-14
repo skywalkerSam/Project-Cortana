@@ -1,28 +1,16 @@
 """
 Author: @skywalkerSam
-Aim: Development of something like Cortana!
-Date: 12022.12.21.11:01:00
+Aim: Cortana Themed OS Assistant
+Date: 12024.01.14.1312
 """
+
 # TODO
-# Current weather conditions
-# Jokes
-# Number Game
-# Hangman Game
-# Play Music
-# Results with Wikipedia 
-# Send Email
-# Send Whatsapp Message
-# Encryption System
-# Switch between voices
-# Add some useful websites on command
-# Add some useful system apps on command
-# A better voice recognition system
-# Add more system controls
-# Improve the UI
-# Make it cross-platform
+# Clock
+# Weather
+# Handle requests with Wikipedia 
+# Use a better voice recognition & output system
+# Integrate OS controls
 # Prepare a "Documentation"
-# ChatGpt Implementation for general conversations
-# Use Metahumans for interaction
 
 import pyttsx3 as ptx
 import speech_recognition as sr
