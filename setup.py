@@ -8,5 +8,5 @@ setup(
     license='MIT',
     author='Starboy',
     author_email='starboy@skywalkersam.dev',
-    description='This is Project-Cortana.'
+    description='Project-Cortana.'
 )
